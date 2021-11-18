@@ -31,6 +31,7 @@ fun generate_text(text: String): String {
 fun Route.generateStoryRoute() {
     route("/generateStory") {
         post {
+            print("Request\n")
             val data = call.receive<Place>()
             var input = File( PATH + data.setting + "/" + data.room + ".txt").readText()
 
